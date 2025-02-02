@@ -2,25 +2,27 @@
 
 
 Key Columns for Fraud Detection & Revenue Assurance Analysis:
-Customer & Account Information:
+`Customer & Account Information:`
 
-customerId / CustomerID: Unique identifier for customers.
-accountNumber: Account identifier.
-creditLimit: Credit limit for the account.
-availableMoney: Available money in the account, useful for fraud detection.
-currentBalance: Current balance in the account.
-accountOpenDate: Date the account was opened.
-dateOfLastAddressChange: Helps identify anomalies in account activity.
-Transaction Information:
+- customerId / CustomerID: Unique identifier for customers.
+- accountNumber: Account identifier.
+- creditLimit: Credit limit for the account.
+- availableMoney: Available money in the account, useful for fraud detection.
+- currentBalance: Current balance in the account.
+- accountOpenDate: Date the account was opened.
+- dateOfLastAddressChange: Helps identify anomalies in account activity.
 
-transactionAmount: The amount for each transaction, critical for spotting unusual or fraudulent amounts.
-transactionDateTime: Timestamp of each transaction, which can be useful for time-based fraud detection.
-transactionType: Indicates whether a transaction is a purchase, refund, or any other type, useful for identifying suspicious activity.
-OrderID: Unique order identifier, which is useful for tracking specific transactions.
-ProductInformation: Describes the product being purchased, valuable for identifying anomalies or fraudulent product-related transactions.
-PurchaseDate: The date of the purchase, useful for detecting patterns or unusual activity.
-Location: Can help identify if the transaction is occurring from a suspicious or unexpected location.
-Fraud Detection Specific Columns:
+`Transaction Information:`
+
+- transactionAmount: The amount for each transaction, critical for spotting unusual or fraudulent amounts.
+- transactionDateTime: Timestamp of each transaction, which can be useful for time-based fraud detection.
+- transactionType: Indicates whether a transaction is a purchase, refund, or any other type, useful for identifying suspicious activity.
+- OrderID: Unique order identifier, which is useful for tracking specific transactions.
+- ProductInformation: Describes the product being purchased, valuable for identifying anomalies or fraudulent product-related transactions.
+- PurchaseDate: The date of the purchase, useful for detecting patterns or unusual activity.
+- Location: Can help identify if the transaction is occurring from a suspicious or unexpected location.
+
+`Fraud Detection Specific Columns:`
 
 isFraud: Target column for fraud detection model, indicating whether the transaction is fraudulent or not.
 cardCVV / enteredCVV: CVV details for verifying credit card authenticity.
