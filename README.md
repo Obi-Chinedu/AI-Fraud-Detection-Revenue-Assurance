@@ -1,5 +1,9 @@
 # AI-Fraud-Detection-Revenue-Assurance
 
+`Changes Made:`
+- Column Selection: I used the relevant columns you've identified for fraud detection and revenue assurance analysis in columns_of_interest.
+- Fraud Flag: The column for fraud status has been updated from 'fraud_flag' to 'isFraud', based on your dataset's column naming.
+- Correlation Heatmap: I excluded non-numeric columns (customerId, accountNumber, etc.) from the correlation heatmap since correlation analysis works with numerical features.
 
 Key Columns for Fraud Detection & Revenue Assurance Analysis:
 `Customer & Account Information:`
@@ -24,28 +28,28 @@ Key Columns for Fraud Detection & Revenue Assurance Analysis:
 
 `Fraud Detection Specific Columns:`
 
-isFraud: Target column for fraud detection model, indicating whether the transaction is fraudulent or not.
-cardCVV / enteredCVV: CVV details for verifying credit card authenticity.
-cardLast4Digits: Last four digits of the card number, useful for tracing transactions.
-merchantName: Name of the merchant where the transaction took place.
-merchantCountryCode: Useful for identifying geographical anomalies in fraud.
-merchantCategoryCode: Merchant category could be used for identifying unusual transaction types.
-posEntryMode: Identifies the mode of entry (e.g., swipe, chip, etc.), which could indicate potential fraudulent behavior.
-Telecom Usage Information (Relevant for Churn Prediction and Risk):
+- isFraud: Target column for fraud detection model, indicating whether the transaction is fraudulent or not.
+- cardCVV / enteredCVV: CVV details for verifying credit card authenticity.
+- cardLast4Digits: Last four digits of the card number, useful for tracing transactions.
+- merchantName: Name of the merchant where the transaction took place.
+- merchantCountryCode: Useful for identifying geographical anomalies in fraud.
+- merchantCategoryCode: Merchant category could be used for identifying unusual transaction types.
+- posEntryMode: Identifies the mode of entry (e.g., swipe, chip, etc.), which could indicate potential fraudulent behavior.
+- Telecom Usage Information (Relevant for Churn Prediction and Risk):
 
 state: Customer's location, which can help in location-based fraud detection.
-area code: Useful for telecom-related fraud.
-account length: Indicates how long the customer has been with the company, which could influence churn and fraud risk.
-number vmail messages: Can be used to assess customer engagement and behavior.
-total day minutes, total day calls, total day charge: Data usage patterns that may indicate fraudulent activity or changes in behavior.
-total eve minutes, total eve calls, total eve charge: Evening usage patterns.
-total night minutes, total night calls, total night charge: Night usage patterns.
-total intl minutes, total intl calls, total intl charge: International usage, which may flag fraudulent or out-of-pattern transactions.
-customer service calls: The number of times the customer has contacted customer service, useful for detecting potentially fraudulent behavior.
+- area code: Useful for telecom-related fraud.
+- account length: Indicates how long the customer has been with the company, which could influence churn and fraud risk.
+- number vmail messages: Can be used to assess customer engagement and behavior.
+- total day minutes, total day calls, total day charge: Data usage patterns that may indicate fraudulent activity or changes in behavior.
+- total eve minutes, total eve calls, total eve charge: Evening usage patterns.
+- total night minutes, total night calls, total night charge: Night usage patterns.
+- total intl minutes, total intl calls, total intl charge: International usage, which may flag fraudulent or out-of-pattern transactions.
+- customer service calls: The number of times the customer has contacted customer service, useful for detecting potentially fraudulent behavior.
 Churn Prediction:
 
-churn: Indicates whether the customer has churned, which can be used for predictive analysis.
-Columns to Potentially Drop or Ignore:
-Unnamed: 0: This is typically an index column or irrelevant column created during data import. You can drop it.
-common_id: Depending on the context, it might not provide relevant information.
-transactionType, posConditionCode, expirationDateKeyInMatch, cardPresent: These could be more relevant for specific fraud models, but may not be necessary for all types of fraud detection
+##### churn: Indicates whether the customer has churned, which can be used for predictive analysis.
+`Columns to Potentially Drop or Ignore:`
+- Unnamed: 0: This is typically an index column or irrelevant column created during data import. You can drop it.
+- common_id: Depending on the context, it might not provide relevant information.
+- transactionType, posConditionCode, expirationDateKeyInMatch, cardPresent: These could be more relevant for specific fraud models, but may not be necessary for all types of fraud detection
